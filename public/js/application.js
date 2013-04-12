@@ -1,7 +1,22 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  hideForm();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(document).on('click', 'button', function(event){
+    var click = $(event);
+
+    if (click == $('button.signup')) {
+      $('form').attr('action', '/signup');
+      dropFrom();
+    }
+
+  });
+
 });
+
+var dropForm = function() {
+  $('form#signup').slideDown('slow');
+}
+
+var hideForm = function() {
+  $('form').hide();
+}

@@ -14,7 +14,7 @@ class CreateTables < ActiveRecord::Migration
     create_table :questions do |q|
       q.string :text
       q.references :survey
-      q.timestamps 
+      q.timestamps
     end
 
     create_table :choices do |a|
