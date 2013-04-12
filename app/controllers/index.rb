@@ -12,5 +12,4 @@ post '/signup' do
 end
 
 post 'login' do
-  @user = 
 end
