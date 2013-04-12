@@ -1,9 +1,29 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+header nav {
+  margin: 0 auto;
+  background-color: rgb(60,63,64);
+  padding: 2em 0;
 }
-th {
-  text-align: left;
+
+header nav button {
+  border: none;
+  background-color: rgb(108,206,217);
+  padding: 20px;
+  margin-left: 30px;
+  color: rgb(60,63,64);
+  font-size: 1.5em;
+}
+
+header form {
+  background-color: rgb(217,161,59);
+}
+
+header form input {
+  padding: 1.5em;
+  border: none;
+  margin: 20px;
+}
+
+header form button {
+  border: none;
+  background-color
 }

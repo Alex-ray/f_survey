@@ -1,12 +1,25 @@
 $(document).ready(function() {
   hideForm();
 
-  $(document).on('click', 'button', function(event){
-    var click = $(event);
+  $(document).on('click', 'button', function(event) {
+    var $target = $(event.target);
+    if ( $target.is('.signup') ) {
 
-    if (click == $('button.signup')) {
       $('form').attr('action', '/signup');
-      dropFrom();
+      $('button.signup').hide();
+      $('button.login').show();
+      $('form button').text('Sign Up');
+      dropForm();
+    }
+
+    if ( $target.is('.login') ) {
+
+      $('form').attr('action', '/login');
+      $('button.login').hide();
+      $('button.signup').show();
+      $('form button').text('Log In');
+      dropForm();
+
     }
 
   });
@@ -14,7 +27,7 @@ $(document).ready(function() {
 });
 
 var dropForm = function() {
-  $('form#signup').slideDown('slow');
+  $('form').slideDown(100);
 }
 
 var hideForm = function() {
