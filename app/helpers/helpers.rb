@@ -16,4 +16,8 @@ helpers do
       @errors = "Username or password not valid"
     end
   end
+
+  def generate_token
+    #implement this
+  end
 end
