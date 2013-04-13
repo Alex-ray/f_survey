@@ -3,23 +3,30 @@ get '/' do
 end
 
 get '/:survey_id' do
-  @survey = Survey.where("id = ?", params[:survey_id])
+  @survey = Survey.find(params[:survey_id])
   erb :index
 end
 
 post '/signup' do
-  @user = User.create(params[:user])
-end
-
-post 'login' do
-  user = User.authenticate(params[:email], params[:password])
-
+  user = User.create(params[:user])
   sign_in(user)
   if user == nil
-    @errors
+    "Username or password not valid"
+  else
+    "false"
+  end
+end
+
+post '/login' do
+  user = User.authenticate(params[:user])
+  sign_in(user)
+  if user == nil
+    "Username or password not valid"
+  else
+    "false"
   end
 end
 
 post '/logout' do
-  session[]
+  session[:user_id] = nil
 end
