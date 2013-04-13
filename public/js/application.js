@@ -1,27 +1,45 @@
 $(document).ready(function() {
-  hideForm();
+  hideForm('header form');
+  navButtonHide();
 
   $(document).on('click', 'button', function(event) {
     var $target = $(event.target);
 
-    if ($target.is('.signup')) {
-      signupForm()
-    }
+    if ($target.is('.signup')) {signupForm()}
 
-    if ($target.is('.login')) {
-      loginForm()
-    }
+    if ($target.is('.login')) {loginForm()}
+
+    if ($target.is('.logout')) {logOut()}
   });
 
   $('form').submit(function(e) {
     e.preventDefault();
+
     var url = $('form').attr('action');
     var data = $('form').serialize();
-    $.post(url,data, function(){loginSuccess()});
+
+    $.post(url,data, function(data){
+
+      if (data === "false") {
+        loginSuccess();
+      } else {
+        $('header').append('<div class="errors">'+data+'</div>');
+      }
+
+    });
+
     return false;
   });
 
 });
+
+var logOut = function() {
+  var data = {logout: true};
+  $.post('/logout',data,function(){
+    hideForm('header form');
+    navButtonHide();
+  });
+}
 
 var loginSuccess = function() {
   $('form').slideUp('fast');
@@ -46,7 +64,12 @@ var loginForm = function() {
   $('form').slideDown(100);
 }
 
-var hideForm = function() {
-  $('form').hide();
+var hideForm = function(form) {
+  $(form).hide();
+}
+
+var navButtonHide = function() {
   $('.logout').hide();
+  $('.signup').show();
+  $('.login').show();
 }
