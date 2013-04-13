@@ -1,5 +1,10 @@
-::selection { color: #D8D878; background: #480018; } 
-
+::selection {
+  color: #D8D878;
+  background: #480018;
+}
+html, body {
+  background-color: rgb(242,242,242);
+}
 header nav {
   margin: 0 auto;
   background-color: rgb(60,63,64);
@@ -25,6 +30,7 @@ header form input {
   margin: 1em;
   font-size: 1.5em;
   color: rgb(60,63,64);
+  background-color: rgb(242,242,242);
 }
 :focus {
   outline: none;

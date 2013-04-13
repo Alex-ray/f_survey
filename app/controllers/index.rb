@@ -8,7 +8,8 @@ get '/:survey_id' do
 end
 
 post '/signup' do
-  @user = User.create[:params]
+  puts params[:user].inspect
+  @user = User.create(params[:user])
 end
 
 post 'login' do
