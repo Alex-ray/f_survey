@@ -1,18 +1,25 @@
 <header>
-
-  <nav>
-    <button class="login">Log In</button>
-    <button class="signup">Sign Up</button>
-    <button class="logout">Log Out</button>
-  </nav>
+    <nav>
+      <button class="login">Log In</button>
+      <button class="signup">Sign Up</button>
+      <button class="logout">Log Out</button>
+      <button class="survey">Create Survey</button>
+    </nav>
 
   <form action="/login" method="post">
     <input type="email" name="user[email]" placeholder="email@example.com" />
     <input type="password" name="user[password]" placeholder="password" />
     <button type="submit">Submit</button>
   </form>
-
 </header>
+
+
+  <div class="surveyform">
+    <form action="/new_survey" method="post">
+      <input type="text" name="survey[title]" placeholder="Survey Title">
+    </form>
+  <div>
+
 <footer>
     <span class="copy_right">Copyright &copy;. Alex Ray, Michael Malchak, Chris Malin, Eric Dykstra</span>
 </footer>

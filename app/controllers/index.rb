@@ -40,4 +40,5 @@ get '/:survey_id/:token_id' do
   @survey = Survey.where("id = ?", params[:survey_id])
   @token = Token.where("id = ?", params[:token_id])
   erb :index
+
 end
