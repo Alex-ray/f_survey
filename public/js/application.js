@@ -70,6 +70,7 @@ var hideForm = function(form) {
 
 var navButtonHide = function() {
   $('.logout').hide();
+  $('.survey').hide();
   $('.signup').show();
   $('.login').show();
 }
