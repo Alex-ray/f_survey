@@ -6,7 +6,7 @@
       <button class="survey">Create Survey</button>
     </nav>
 
-  <form action="/login" method="post">
+  <form class="header_form" action="/login" method="post">
     <input type="email" name="user[email]" placeholder="email@example.com" />
     <input type="password" name="user[password]" placeholder="password" />
     <button type="submit">Submit</button>
@@ -14,11 +14,13 @@
 </header>
 
 
-  <div class="newsurvey">
-    <form action="/new_survey" method="post">
-      <input type="text" name="survey[title]" placeholder="Survey Title">
-    </form>
   <div>
+    <form class="survey_form" action="/new_survey" method="post">
+      <input type="text" name="survey[title]" placeholder="Survey Title">
+      <button class="add_question">Add Question</button>
+      <button class="create_survey">Create Survey</button>
+    </form>
+  </div>
 
 <footer>
     <span class="copy_right">Copyright &copy;. Alex Ray, Michael Malchak, Chris Malin, Eric Dykstra</span>

@@ -19,11 +19,11 @@ button {
   font-size: 1.5em;
 }
 
-header form {
+form {
   background-color: rgb(217,161,59);
 }
 
-header form input {
+form input {
   padding: 0.5em;
   border: none;
   margin: 1em;
@@ -34,7 +34,7 @@ header form input {
 :focus {
   outline: none;
 }
-header form button {
+header form button, div form button {
   padding: 0.5em;
   font-size: 1.5em;
   border: none;

@@ -1,5 +1,6 @@
 $(document).ready(function() {
   hideForm('header form');
+  hideForm('.survey_form');
   navButtonHide('fade');
 
   $('nav').click(function(event){
@@ -20,11 +21,11 @@ $(document).ready(function() {
     if ($target.is('.logout')) {logOut()}
   });
 
-  $('form').submit(function(e) {
+  $('header form').submit(function(e) {
     e.preventDefault();
 
-    var url = $('form').attr('action');
-    var data = $('form').serialize();
+    var url = $('header form').attr('action');
+    var data = $('header form').serialize();
 
     $.post(url,data, function(data){
 
@@ -50,26 +51,27 @@ var logOut = function() {
 }
 
 var loginSuccess = function() {
-  $('form').slideUp('fast');
+  $('header form').slideUp('fast');
   $('.signup').hide();
   $('.login').hide();
   $('.logout').show();
+  $('.survey').show();
 }
 
 var signupForm = function() {
-  $('form').attr('action', '/signup');
+  $('header form').attr('action', '/signup');
   $('button.signup').hide();
   $('button.login').show();
-  $('form button').text('Sign Up');
-  $('form').slideDown(100);
+  $('header form button').text('Sign Up');
+  $('header form').slideDown(100);
 }
 
 var loginForm = function() {
-  $('form').attr('action', '/login');
+  $('header form').attr('action', '/login');
   $('button.login').hide();
   $('button.signup').show();
-  $('form button').text('Log In');
-  $('form').slideDown(100);
+  $('header form button').text('Log In');
+  $('header form').slideDown(100);
 }
 
 var hideForm = function(form) {
