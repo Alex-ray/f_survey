@@ -21,7 +21,13 @@ $(document).ready(function() {
     e.preventDefault();
     var url = $('form').attr('action');
     var data = $('form').serialize();
-    $.post(url,data, function(){loginSuccess()});
+    $.post(url,data, function(data){
+      if (data === "false") {
+        loginSuccess();
+      } else {
+        $('header').append('<div class="errors">'+data+'</div>');
+      }
+    });
     return false;
   });
 
