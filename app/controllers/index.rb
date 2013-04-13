@@ -28,5 +28,15 @@ post '/login' do
 end
 
 post '/logout' do
+<<<<<<< HEAD
   session[:user_id] = nil
+=======
+  session[]
+end
+
+get '/:survey_id/:token_id' do
+  @survey = Survey.where("id = ?", params[:survey_id])
+  @token = Token.where("id = ?", params[:token_id])
+  erb :index
+>>>>>>> 53372bc1c33c0cefaf56ada3fc9dc9ac232e462f
 end
