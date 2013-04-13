@@ -14,3 +14,7 @@ end
 
 post 'login' do
 end
+
+post '/new_survey' do
+	
+end

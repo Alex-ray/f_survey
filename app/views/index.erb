@@ -4,6 +4,7 @@
       <button class="login">Login</button>
       <button class="signup">Signup</button>
       <button class="logout">Log Out</button>
+      <button class="survey">Create Survey</button>
     </nav>
 
     <form action="/login" method="post">
@@ -13,6 +14,13 @@
     </form>
 
   </header>
+
+  <div class="surveyform">
+    <form action="/new_survey" method="post">
+      <input type="text" name="survey[title]" placeholder="Survey Title">
+    </form>
+  <div>
+
 
 <footer>
   <ul>
