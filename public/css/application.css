@@ -10,10 +10,9 @@ header nav {
   background-color: rgb(60,63,64);
   padding: 2em 0;
 }
-
-header nav button {
+button {
   border: none;
-  background-color: rgb(108,206,217);
+  background-color: rgb(56,155,166);
   padding: 20px;
   margin-left: 30px;
   color: rgb(60,63,64);
@@ -43,3 +42,7 @@ header form button {
   background-color: rgb(60,63,64);
 }
 
+
+footer {
+
+}
