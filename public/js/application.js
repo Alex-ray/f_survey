@@ -1,6 +1,6 @@
 $(document).ready(function() {
   hideForm('header form');
-  navButtonHide();
+  navButtonHide('fade');
 
   $('nav').click(function(event){
     $target = $(event.target);
@@ -76,15 +76,9 @@ var hideForm = function(form) {
   $(form).hide();
 }
 
-<<<<<<< HEAD
-var navButtonHide = function() {
-  $('.logout').hide();
-  $('.survey').hide();
-  $('.signup').show();
-  $('.login').show();
-=======
 var navButtonHide = function(state_change) {
   if (state_change === 'fade') {
+    $('.survey').hide();
     $('.logout').hide();
     $('.signup').fadeIn('fast');
     $('.login').fadeIn('fast');
@@ -93,5 +87,4 @@ var navButtonHide = function(state_change) {
     $('.signup').show();
     $('.login').show();
   }
->>>>>>> f78afec201b2ad857d81e7216ef4c407edb0bfd9
 }
