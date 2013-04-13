@@ -5,11 +5,15 @@ $(document).ready(function() {
     var $target = $(event.target);
 
     if ($target.is('.signup')) {
-      signupForm()
+      signupForm();
     }
 
     if ($target.is('.login')) {
-      loginForm()
+      loginForm();
+    }
+
+    if ($target.is('.logout')) {
+      logOut();
     }
   });
 
@@ -22,6 +26,13 @@ $(document).ready(function() {
   });
 
 });
+
+var logOut = function() {
+  var data = {logout: true};
+  $.post('/logout',data,function(){
+    hideForm();
+  });
+}
 
 var loginSuccess = function() {
   $('form').slideUp('fast');
@@ -49,4 +60,6 @@ var loginForm = function() {
 var hideForm = function() {
   $('form').hide();
   $('.logout').hide();
+  $('.signup').show();
+  $('.login').show();
 }

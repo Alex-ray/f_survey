@@ -8,9 +8,18 @@ get '/:survey_id' do
 end
 
 post '/signup' do
-  puts params[:user].inspect
   @user = User.create(params[:user])
 end
 
 post 'login' do
+  user = User.authenticate(params[:email], params[:password])
+
+  sign_in(user)
+  if user == nil
+    @errors
+  end
+end
+
+post '/logout' do
+  session[]
 end
