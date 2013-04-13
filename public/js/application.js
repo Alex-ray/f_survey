@@ -1,6 +1,6 @@
 $(document).ready(function() {
   hideForm('header form');
-  navButtonHide();
+  navButtonHide('fade');
 
   $('nav').click(function(event){
     $target = $(event.target);
